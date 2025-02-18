@@ -15,13 +15,17 @@ nextButton.addEventListener('click', showNextSlide);
 pagination.addEventListener('click',(e) => updateSliderFromPagination(e))
 
 function showPreviousSlide() {
-  slideIndex = (slideIndex - 1 + slideCount) % slideCount;
-  updateSlider(slideIndex);
+  if (slideIndex !== 0) {
+    slideIndex = (slideIndex - 1);
+    updateSlider(slideIndex);
+  }
 }
 
 function showNextSlide() {
-  slideIndex = (slideIndex + 1) % slideCount;
-  updateSlider(slideIndex);
+  if (slideIndex !== slideCount - 1) {
+    slideIndex = (slideIndex + 1);
+    updateSlider(slideIndex);
+  }
 }
 
 function updateSliderFromPagination(e) {
@@ -43,7 +47,10 @@ function updateSlider(slideIndex = 0) {
       slide.style.width = '100%';
       slide.style.opacity = '100%';
       slide.style.transition = 'width 1s, opacity 0.3s ease';
-      section.style.background = `linear-gradient(180deg, ${colors[index]} 77%, #ffffff 77%)`
+      if (window.innerWidth > 768 & window.innerWidth < 1440) {
+        section.style.background = `linear-gradient(180deg, ${colors[index]} 77%, #ffffff 77%)`
+
+      }
       updatePagination(index);
     } else {
       slide.style.width = '0';

@@ -8,6 +8,8 @@
 
   @media (min-width: $desktop-width) {
     margin-bottom: 0;
+    background: linear-gradient(180deg, rgb(243, 235, 225) 100%, rgb(255, 255, 255) 0%);
+    padding-bottom: 0;
   }
 }
 
@@ -281,7 +283,7 @@
   margin: 0;
 
   @media (min-width: $desktop-width) {
-    margin-bottom: 25px;
+    margin-bottom: 50px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
