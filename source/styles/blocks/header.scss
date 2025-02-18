@@ -1,5 +1,74 @@
 .header {
-  background-color: #663399;
-  color: #ffffff;
-  padding: 10px 15px;
+  max-width: $desktop-width;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  background-color: $color-base-second;
+  padding: 0 0 0 20px;
+
+  @media (max-width: calc($tablet-width - 1px)) {
+    &--no-script {
+      margin-bottom: 228px;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 0 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 0 40px;
+  }
+}
+
+.header__link {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-decoration: none;
+  transition: transform $trans-default;
+
+  &:hover,
+  &:focus-visible {
+    outline: none;
+    transform: scale(1.05);
+    transition: transform $trans-default;
+  }
+}
+
+.header__logotype {
+  display: block;
+  width: 32px;
+  transition: width $trans-default;
+
+  @media (min-width: $tablet-width) {
+    width: 82px;
+    transition: width $trans-default;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 170px;
+    transition: width $trans-default;
+  }
+}
+
+.header__logotype-text {
+  display: none;
+  max-width: 126px;
+  font-size: 12px;
+  line-height: $lh-title;
+  color: $color-base-font;
+
+  @media (min-width: $desktop-width) {
+    display: block;
+  }
+}
+
+.header__menu {
+  display: flex;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row-reverse;
+    flex: 1;
+  }
 }

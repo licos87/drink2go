@@ -1,1 +1,39 @@
 /* здесь используйте глобальные переменные */
+
+/* Colors */
+
+/* Base */
+$color-base-primary: #7859cf;
+$color-base-second: #ffffff;
+$color-base-third: #f0ebff;
+$color-base-fourth : #bdbdbd;
+$color-base-font : #333333;
+/* Alt */
+$color-alt-primary-opacity25: rgba(120, 89, 207, 0.25);
+$color-alt-primary-lighter: #9070ec;
+$color-alt-primary-darker: #593cac;
+$color-alt-fourth-light: #e2e2e2;
+/* Background */
+$color-bg-primary: #ffffff;
+$color-bg-second: #f8f8f8;
+$color-bg-flat-white: #f3ebe1;
+$color-bg-lavender: #eae6fc;
+$color-bg-espresso: #e5e6e8;
+
+/* Typography */
+$ff-default: "Montserrat", "Arial", sans-serif;
+
+$fz-default:         14px;
+$fz-title:           36px;
+$lh-default:         1.43em;
+$lh-title:         1.33em;
+
+
+/* Animation */
+$tf-default:         ease;
+$trans-default:      0.3s $tf-default;
+
+
+/* Viewports */
+$tablet-width: 768px;
+$desktop-width: 1440px;

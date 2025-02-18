@@ -1,0 +1,331 @@
+.filter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    position: relative;
+    padding-bottom: 90px;
+  }
+
+  @media (min-width: $desktop-width) {
+    flex-direction: column;
+  }
+}
+
+.filter-form__group {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.filter-form__group-title {
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+
+  &--price {
+    margin-bottom: 30px;
+  }
+}
+
+.filter-form-list {
+  list-style-type: none;
+}
+
+.filter-form__price-range {
+  height: 2px;
+  background-color: $color-alt-fourth-light;
+  margin-bottom: 35px;
+  width: 200px;
+
+  .noui-connects {
+    height: 4px;
+    top: -2px;
+    background-color: transparent;
+  }
+
+  .noui-connect {
+    height: 4px;
+    background: $color-base-primary;
+  }
+
+  .noui-base {
+    background-color: $color-alt-fourth-light;
+    border: none;
+    left: 6px;
+    cursor: pointer;
+  }
+
+  .noui-handle {
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    border: 2px solid $color-base-primary;
+    top: -12px;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+
+  .noui-handle:hover {
+    &::after {
+      display: block;
+      width: 16px;
+      height: 16px;
+      background-color: $color-alt-primary-opacity25;
+      border-radius: 100%;
+      top: 2px;
+      left: 2px;
+    }
+  }
+
+  .noui-handle:active {
+    &::after {
+      background-color: $color-base-primary;
+    }
+  }
+
+  &:disabled {
+    .not-allowed {
+      border: 2px solid $color-base-fourth;
+
+      &::after,
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+.filter-form__price-field {
+  width: 118px;
+  padding: 6px 10px;
+  text-align: center;
+  font-family: $ff-default;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  border: 2px solid $color-base-primary;
+  border-radius: 4px;
+  background-color: $color-bg-primary;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    appearance: none;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 87px;
+  }
+}
+
+.filter-form__price-wrapper {
+  position: relative;
+  display: flex;
+  gap: 44px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 2px;
+    top: 20px;
+    right: 136px;
+    background-color: $color-alt-fourth-light;
+  }
+}
+
+.filter-form__group-list {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  list-style-type: none;
+  gap: 20px;
+}
+
+.filter-form__milk-lable {
+  position: relative;
+  padding-left: 34px;
+  cursor: pointer;
+}
+
+
+.filter-form__milk-lable:hover {
+  .filter-form__milk-field:not(:disabled) + .filter-form__milk-color-mark::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: $color-alt-primary-opacity25;
+  }
+
+  .filter-form__milk-field:not(:disabled) + .filter-form__milk-color-mark {
+    border-color: $color-base-primary;
+  }
+}
+
+.filter-form__milk-color-mark {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  left: 0;
+  border: 2px solid $color-base-fourth;
+  border-radius: 100%;
+}
+
+.filter-form__milk-field:checked + .filter-form__milk-color-mark {
+  border: 2px solid $color-base-primary;
+}
+
+.filter-form__milk-field:disabled + .filter-form__milk-color-mark {
+  border: 2px solid $color-alt-fourth-light;
+}
+
+.filter-form__milk-field:checked + .filter-form__milk-color-mark::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background-color: $color-base-primary;
+  border-radius: 50%;
+}
+
+.filter-form__milk-field:disabled + .filter-form__milk-color-mark::before {
+  background-color: $color-alt-fourth-light;
+}
+
+.filter-form__milk-text {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.filter-form__milk-field:disabled ~ .filter-form__milk-text {
+  color: $color-alt-fourth-light;
+}
+
+.filter-form__country-lable {
+  position: relative;
+  padding-left: 52px;
+  vertical-align: middle;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.filter-form__country-color-mark {
+  content: "";
+  position: absolute;
+  width: 42px;
+  height: 24px;
+  left: 0;
+  border-radius: 20px;
+  background-color: $color-base-fourth;
+  transition: background-color $trans-default;
+  border: 2px solid transparent;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: 0;
+    background-color: $color-bg-primary;
+    border-radius: 100%;
+    transition: transform $trans-default;
+  }
+}
+
+.filter-form__country-field:checked + .filter-form__country-color-mark {
+  background-color: $color-base-primary;
+  transition: background-color $trans-default;
+}
+
+.filter-form__country-field:disabled {
+  & + .filter-form__country-color-mark::after {
+    background-color: $color-bg-primary;
+  }
+
+  & + .filter-form__country-color-mark {
+    background-color: $color-alt-fourth-light;
+  }
+
+  &:checked + .filter-form__country-color-mark::after {
+    background-color: $color-base-fourth;
+    transition: background-color $trans-default;
+  }
+}
+
+.filter-form__country-field:hover:not(:disabled) {
+  & + .filter-form__country-color-mark {
+    background-color: $color-alt-primary-opacity25;
+    border: 2px solid $color-base-primary;
+  }
+}
+
+.filter-form__country-field:checked + .filter-form__country-color-mark::after {
+  transform: translateX(18px);
+  transition: transform $trans-default;
+}
+
+.filter-form__country-text {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.filter-form__btn-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  @media (min-width: $tablet-width) {
+    position: absolute;
+    flex-direction: row;
+    bottom: 0;
+    left: 250px;
+  }
+}
+
+.filter-form__btn {
+  width: 280px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $ff-default;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: $color-bg-primary;
+  background-color: $color-base-primary;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  @media (min-width: $tablet-width) {
+    width: 137px;
+  }
+}
+
+.filter-form__reset-btn {
+  color: $color-base-primary;
+  background-color: $color-bg-primary;
+}

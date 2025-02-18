@@ -1,0 +1,321 @@
+.hero {
+  background-color: $color-bg-flat-white;
+
+  @media (min-width: $tablet-width) {
+    background: linear-gradient(180deg, rgb(243, 235, 225) 77%, rgb(255, 255, 255) 77%);
+    padding-bottom: 188px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 0;
+  }
+}
+
+.hero__wrapper {
+  position: relative;
+  max-width: 320px;
+  margin: 0 auto;
+  padding: 20px 20px 60px;
+
+  @media (min-width: $tablet-width) {
+    max-width: $tablet-width;
+    padding: 61px 20px 302px;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: $desktop-width;
+    padding: 31px 40px 30px;
+    margin-bottom: 0;
+  }
+}
+
+.hero__slider {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  overflow: hidden;
+
+  @media (min-width: $desktop-width) {
+    width: 1360px;
+    height: 605px;
+  }
+}
+
+.hero__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  overflow: hidden;
+
+  & picture {
+    width: 280px;
+    height: 100%;
+
+    @media (min-width: $tablet-width) {
+      order: 2;
+    }
+
+    @media (min-width: $desktop-width) {
+      width: 600px;
+      order: 1;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    flex-direction: row;
+    justify-content: center;
+    gap: 5px;
+  }
+}
+
+.hero__card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+
+  @media (min-width: $tablet-width) {
+    order: 1;
+    gap: 4px;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: 625px;
+    order: 2;
+    align-items: flex-start;
+    transform: translate(25px, -6px);
+  }
+}
+
+.hero__card-img {
+  @media (min-width: $tablet-width) {
+    position: absolute;
+    left: 19%;
+    top: 55%;
+  }
+
+  @media (min-width: $desktop-width) {
+    transform: translate(0, 0);
+    position: static;
+  }
+}
+
+.hero__card-mark {
+  color: $color-base-primary;
+  font-size: 12px;
+  line-height: $lh-title;
+  font-weight: 700;
+}
+
+.hero__card-title {
+  margin: 0 0 2px;
+  text-align: center;
+  font-size: $fz-title;
+  line-height: $lh-title;
+  letter-spacing: 1px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 56px;
+    line-height: 80px;
+    letter-spacing: 1px;
+    margin: 0 0 12px;
+  }
+}
+
+.hero__card-descriptions {
+  width: 280px;
+  text-align: center;
+  margin: 0 0 16px;
+  padding: 0 1px;
+
+  & br {
+    display: none;
+
+    @media (min-width: $tablet-width) {
+      display: block;
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 628px;
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 400;
+  }
+
+  @media (min-width: $desktop-width) {
+    text-align: start;
+    margin: 0 0 35px;
+  }
+}
+
+.hero__card-payment {
+  display: flex;
+  gap: 21px;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero__card-payment-container {
+  display: flex;
+  gap: 6px;
+}
+
+.hero__card-payment-old-price {
+  color: $color-base-primary;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  text-decoration: line-through;
+}
+
+.hero__card-payment-price {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+.hero__card-payment-btn {
+  padding: 8px 20px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: $color-base-second;
+  letter-spacing: 0.8px;
+  background-color: $color-base-primary;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color $trans-default;
+
+  &:hover,
+  &:focus-visible {
+    background-color: $color-alt-primary-lighter;
+    outline: none;
+    transition: background-color $trans-default;
+  }
+
+  &:active {
+    background-color: $color-alt-primary-darker;
+    transition: background-color $trans-default;
+  }
+
+  &:disabled {
+    background-color: $color-base-fourth;
+    cursor: auto;
+    transition: background-color $trans-default;
+  }
+}
+
+.hero__control {
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 100%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+
+  &:hover,
+  &:focus-visible {
+    background: linear-gradient(90deg, #ffffff, transparent);
+    outline: none;
+  }
+
+  &:active {
+    background: linear-gradient(90deg, rgba(121, 89, 207, 0.25), transparent);
+  }
+
+  &--prev {
+    left: 0;
+  }
+
+  &--next {
+    right: 0;
+
+    &:hover,
+    &:focus-visible {
+      background: linear-gradient(270deg, #ffffff, transparent);
+      outline: none;
+    }
+
+    &:active {
+      background: linear-gradient(270deg, rgba(121, 89, 207, 0.25), transparent);
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 80px;
+    height: 640px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 80px;
+    height: 714px;
+  }
+}
+
+.hero__control-image {
+  width: 20px;
+  height: 20px;
+  fill: $color-alt-primary-darker;
+
+  &--next {
+    transform: rotate(180deg);
+  }
+}
+
+.hero__pagination-list {
+  display: none;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 6px;
+    transform: translate(2px, -5px);
+  }
+}
+
+.hero__pagination-button {
+  width: 62px;
+  height: 24px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  & svg {
+    fill: $color-base-second;
+  }
+
+  &:hover,
+  &:focus-visible {
+    outline: none;
+
+    & svg {
+      fill: $color-alt-primary-opacity25;
+    }
+  }
+}
+
+.hero__pagination-button--active {
+  & svg {
+    fill: $color-base-primary;
+  }
+}
